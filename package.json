@@ -5,7 +5,8 @@
   "main": "./build/pootlize.js",
   "bin": "./dist/pootlize.js",
   "scripts": {
-    "start": "webpack --config webpack.config.jsk"
+    "start": "webpack --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
     "argparse": "^1.0.10",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "uglifyjs-webpack-plugin": "^1.2.0",
     "webpack": "^3.11.0",
     "webpack-permissions-plugin": "0.0.2"
   },
