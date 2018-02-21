@@ -1,9 +1,9 @@
 import commands from './commands'
-import { FLAGS_MAX_LEN } from './helpers'
+import { FLAGS_MAX_LEN, name } from './helpers'
 
 
 function printCmds(cmds, indent) {
-  var flags
+  let flags
   for (const cmd of cmds) {
     flags = ' '.repeat(indent * 2) + cmd.flags.join(', ')
     console.log(flags.padEnd(FLAGS_MAX_LEN) + cmd.help)
@@ -15,7 +15,10 @@ function printCmds(cmds, indent) {
 }
 
 export default function help() {
-  console.log('Usage: pootlize [args]\n\nArguments:\n')
+  console.log(`Usage: ${name()} [args]
+
+Arguments:
+`)
   printCmds(commands, 0)
   console.log('')
   process.exit(0)

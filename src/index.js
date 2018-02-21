@@ -1,10 +1,12 @@
-import { getCmd } from './helpers'
+import { getCmd, name } from './helpers'
 
 const cmd = getCmd()
 
 if (!cmd) {
-  console.error('\npootlize: invalid argument ‘', process.argv.slice(2).join(' '), '’')
-  console.error('Try \'pootlize --help\' for more information\n')
+  console.error(`
+${name()}: invalid argument ‘${process.argv.slice(2).join(' ')}’
+Try 'pootlize --help' for more information
+`)
   process.exit(1)
 }
 

@@ -1,3 +1,4 @@
+import packageJson from '../package.json'
 import commands from './commands'
 
 // if value isn't a flag, begins with - or -- then amend value
@@ -63,3 +64,11 @@ function flagsMaxLen(cmds) {
 }
 
 export const FLAGS_MAX_LEN = flagsMaxLen(commands) + 5
+
+export function name() {
+  return packageJson.name
+}
+
+export function version() {
+  console.log(packageJson.version)
+}

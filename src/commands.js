@@ -1,4 +1,5 @@
 import help from './help'
+import { version } from './helpers'
 
 const commands = [
   {
@@ -10,6 +11,7 @@ const commands = [
   },
 
   {
+    fn: version,
     name: 'version',
     label: 'Version',
     flags: ['-v', '--version'],
