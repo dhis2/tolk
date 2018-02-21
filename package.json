@@ -1,0 +1,39 @@
+{
+  "name": "pootlize",
+  "version": "1.0.0",
+  "description": "Communicate with pootle servers, push/pull translations.",
+  "main": "./build/pootlize.js",
+  "bin": "./dist/pootlize.js",
+  "scripts": {
+    "start": "webpack --config webpack.config.jsk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adeelshahid/pootlize.git"
+  },
+  "keywords": [
+    "pootle",
+    "translations"
+  ],
+  "author": "Muhammad Adeel",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/adeelshahid/pootlize/issues"
+  },
+  "homepage": "https://github.com/adeelshahid/pootlize#readme",
+  "devDependencies": {
+    "argparse": "^1.0.10",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "webpack": "^3.11.0",
+    "webpack-permissions-plugin": "0.0.2"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "arrowParens": "avoid"
+  }
+}
