@@ -5,7 +5,7 @@ const cmd = getCmd()
 if (!cmd) {
   console.error(`
 ${name()}: invalid argument ‘${process.argv.slice(2).join(' ')}’
-Try 'pootlize --help' for more information
+Try 'tolk --help' for more information
 `)
   process.exit(1)
 }

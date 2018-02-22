@@ -2,7 +2,7 @@ import packageJson from '../package.json'
 import commands from './commands'
 
 // if value isn't a flag, begins with - or -- then amend value
-function joinArgs(args) {
+function parseArgs(args) {
   const result = []
   args.forEach(v => {
     if (v.startsWith('-')) {
@@ -45,7 +45,11 @@ function findCmd(args, commands) {
 }
 
 export function getCmd() {
-  const args = joinArgs(process.argv.slice(2))
+  let args = parseArgs(process.argv.slice(2))
+  if (args.length === 0) {
+    args = parseArgs(['--help'])
+  }
+
   return findCmd(args, commands)
 }
 

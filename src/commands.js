@@ -22,35 +22,7 @@ const commands = [
     name: 'status',
     label: 'Status',
     flags: ['-x', '--status'],
-    help: 'Show status, Pootle server in use. Num. of server etc.',
-  },
-
-  {
-    name: 'server',
-    label: 'Server',
-    flags: ['-s', '--server'],
-    defaultValue: 'list',
-    help: 'Pootle server',
-    children: [
-      {
-        name: 'add',
-        label: 'Add',
-        flags: ['-a', '--add'],
-        help: 'Add a Pootle server using user / password.',
-      },
-      {
-        name: 'remove',
-        label: 'Remove',
-        flags: ['-r', '--remove'],
-        help: 'Remove a Pootle server.',
-      },
-      {
-        name: 'list',
-        label: 'List',
-        flags: ['-l', '--list'],
-        help: 'List all Pootle servers.',
-      },
-    ],
+    help: 'Show status.',
   },
 ]
 

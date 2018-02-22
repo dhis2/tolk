@@ -1,27 +1,26 @@
 {
-  "name": "pootlize",
+  "name": "tolk",
   "version": "1.0.0",
-  "description": "Communicate with pootle servers, push/pull translations.",
-  "main": "./build/pootlize.js",
-  "bin": "./dist/pootlize.js",
+  "description": "push/pull translations.",
+  "main": "./build/tolk.js",
+  "bin": "./dist/tolk.js",
   "scripts": {
     "start": "webpack --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adeelshahid/pootlize.git"
+    "url": "git+https://github.com/adeelshahid/tolk.git"
   },
   "keywords": [
-    "pootle",
     "translations"
   ],
   "author": "Muhammad Adeel",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/adeelshahid/pootlize/issues"
+    "url": "https://github.com/adeelshahid/tolk/issues"
   },
-  "homepage": "https://github.com/adeelshahid/pootlize#readme",
+  "homepage": "https://github.com/adeelshahid/tolk#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
