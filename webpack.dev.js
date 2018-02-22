@@ -7,7 +7,7 @@ module.exports = {
   target: 'node',
   watch: true,
   output: {
-    filename: 'pootlize.js',
+    filename: 'tolk.js',
     path: path.join(__dirname, 'build'),
   },
   plugins: [
@@ -15,7 +15,7 @@ module.exports = {
     new PermissionsOutputPlugin({
       buildFiles: [
         {
-          path: path.join(__dirname, 'build', 'pootlize.js'),
+          path: path.join(__dirname, 'build', 'tolk.js'),
           fileMode: '755',
         },
       ],

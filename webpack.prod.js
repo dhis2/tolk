@@ -16,7 +16,7 @@ module.exports = Object.assign({}, devConfig, {
     new PermissionsOutputPlugin({
       buildFiles: [
         {
-          path: path.join(__dirname, 'build', 'pootlize.js'),
+          path: path.join(__dirname, 'build', 'tolk.js'),
           fileMode: '755',
         },
       ],

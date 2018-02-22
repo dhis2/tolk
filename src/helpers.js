@@ -1,5 +1,6 @@
 import packageJson from '../package.json'
 import commands from './commands'
+import { getConfig } from './config'
 
 // if value isn't a flag, begins with - or -- then amend value
 function parseArgs(args) {
@@ -75,4 +76,27 @@ export function name() {
 
 export function version() {
   console.log(packageJson.version)
+  process.exit(0)
+}
+
+export async function status() {
+  const r = await getConfig()
+
+  if (!r.config) {
+    return
+  }
+
+  const config = r.config
+
+  console.log('')
+  if (config.auth) {
+    console.log('# of auths:', config.auth.length)
+  }
+
+  if (config.server) {
+    console.log('# of servers:', config.server.length)
+  }
+
+  console.log('')
+  process.exit(0)
 }
