@@ -31,7 +31,7 @@ function findCmd(args, commands) {
   for (const cmd of commands) {
     if (cmd.flags.includes(arg.flag)) {
       if (args.length === 1) {
-        return cmd
+        return [cmd, arg.values]
       }
 
       if (args.length > 1 && cmd.children) {
@@ -80,21 +80,15 @@ export function version() {
 }
 
 export async function status() {
-  const r = await getConfig()
-
-  if (!r.config) {
-    return
-  }
-
-  const config = r.config
+  const { auth, server } = await getConfig()
 
   console.log('')
-  if (config.auth) {
-    console.log('# of auths:', config.auth.length)
+  if (auth) {
+    console.log('# of auths:', Array.isArray(auth) ? auth.length : Object.keys(auth).length)
   }
 
-  if (config.server) {
-    console.log('# of servers:', config.server.length)
+  if (server) {
+    console.log('# of servers:', Array.isArray(server) ? server.length : Object.keys(server).length)
   }
 
   console.log('')

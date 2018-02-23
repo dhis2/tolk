@@ -1,5 +1,6 @@
 import help from './help'
 import { version, status } from './helpers'
+import { pull, push } from './sync'
 
 const commands = [
   {
@@ -24,6 +25,22 @@ const commands = [
     label: 'Status',
     flags: ['-x', '--status'],
     help: 'Show status.',
+  },
+
+  {
+    fn: pull,
+    name: 'pull',
+    label: 'Pull',
+    flags: ['-p', '--pull'],
+    help: 'Pull a project.',
+  },
+
+  {
+    fn: push,
+    name: 'push',
+    label: 'Push',
+    flags: ['-p', '--push'],
+    help: 'Push a project.',
   },
 ]
 

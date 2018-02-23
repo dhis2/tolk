@@ -2,18 +2,17 @@ import os from 'os'
 import fs from 'fs'
 import path from 'path'
 
-import xml2js from 'xml2js'
-const xmlParser = new xml2js.Parser()
+import { parseString } from 'xml2js'
 
 export function configPath() {
-  return path.join(os.homedir(), '.tolk')
+  return path.join(os.homedir(), '.tolk/config.xml')
 }
 
 export function getConfig() {
   const p = configPath()
   if (!fs.existsSync(p)) {
     console.error(`
-Create .tolk file in xml format in your home directory (~/.tolk).
+Create .tolk file in xml format in your home directory (~/.tolk/config.xml).
 
 Example:
 
@@ -32,13 +31,19 @@ Example:
 
   const config = fs.readFileSync(p, 'utf8')
   return new Promise((resolve, reject) => {
-    xmlParser.parseString(config, (err, data) => {
-      if (err) {
+    parseString(config, {
+      explicitArray: false,
+    }, (err, xml) => {
+      if (err || !xml.config) {
         console.error(err)
         return process.exit(1)
       }
 
-      resolve(data)
+      // console.log('xml.config')
+      // console.log(xml.config)
+      // process.exit(1)
+
+      resolve(xml.config)
     })
   })
 }

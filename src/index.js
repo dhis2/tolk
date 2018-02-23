@@ -1,8 +1,8 @@
 import { getCmd, name } from './helpers'
 
-const cmd = getCmd()
+const result = getCmd()
 
-if (!cmd) {
+if (!result) {
   console.error(`
 ${name()}: invalid argument ‘${process.argv.slice(2).join(' ')}’
 Try 'tolk --help' for more information
@@ -10,4 +10,5 @@ Try 'tolk --help' for more information
   process.exit(1)
 }
 
-cmd.fn()
+const [cmd, arg] = result
+cmd.fn(arg)
