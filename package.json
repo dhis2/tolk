@@ -24,9 +24,9 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "uglifyjs-webpack-plugin": "^1.2.0",
-    "webpack": "^3.11.0",
-    "webpack-permissions-plugin": "0.0.2"
+    "uglifyjs-webpack-plugin": "^2.1.2",
+    "webpack": "^4.29.6",
+    "webpack-permissions-plugin": "1.0.0"
   },
   "prettier": {
     "printWidth": 100,
@@ -38,9 +38,9 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "conf": "^1.4.0",
-    "inquirer": "^5.1.0",
-    "ora": "^1.4.0",
+    "conf": "^2.2.0",
+    "inquirer": "^6.2.2",
+    "ora": "^3.1.0",
     "xml2js": "^0.4.19"
   }
 }
