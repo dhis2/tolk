@@ -1,4 +1,7 @@
 # Tolk
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/dhis2/tolk.svg)](https://greenkeeper.io/)
+
 Push/Pull translations from translate.dhis2.org server
 
 
